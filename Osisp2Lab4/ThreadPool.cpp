@@ -11,6 +11,7 @@ ThreadPool::~ThreadPool() {
 	_readyTaskQueue.Close();
 	for (int i = 0; i < _threads.size(); i++) {
 		_threads[i]->join();
+		delete _threads[i];
 	}
 }
 

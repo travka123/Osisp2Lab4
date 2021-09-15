@@ -13,17 +13,20 @@ int main() {
 
 	std::string filePath = "unsorted.txt";
 
-	const int threadsCount = 1;
+	const int minElemInTask = 5;
+	const int threadsCount = 4;
 
 	//std::cout << "File: ";
 	//std::cin >> filePath;
 
 	std::vector<std::string> words;
-	ReadFile(filePath, words);
-	Sort(words, threadsCount);
+	std::vector<std::string> sorted;
 
-	for (int i = 0; i < words.size(); i++) {
-		std::cout << words[i] << std::endl;
+	ReadFile(filePath, words);
+	Sort(&words, &sorted, threadsCount, minElemInTask);
+
+	for (int i = 0; i < sorted.size(); i++) {
+		std::cout << sorted[i] << std::endl;
 	}
 
 	return 0;
