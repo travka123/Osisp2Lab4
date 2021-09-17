@@ -29,6 +29,8 @@ int main() {
 		std::cout << sorted[i] << std::endl;
 	}
 
+	std::cin.get();
+
 	return 0;
 }
 
